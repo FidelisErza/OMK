@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kepengurusan</title>
+  <link rel="stylesheet" href="Beranda.css">
+  <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="navbar-container">
+      <a href="Beranda.html" class="nav-link">Beranda</a>
+      <a href="pemimpin.html" class="nav-link active">Kepengurusan</a>
+       <a href="Informasi.html" class="nav-link">Informasi</a>
+       <a href="foto.html" class="nav-link">Tentang Kami</a>
+     
+    </div>
+    <div class="header-bar">
+      <img src="omk.png" alt="OMK Logo" class="profile-photo" id="menuToggle">
+      <div class="dropdown-menu" id="dropdownMenu">
+        <a href="beranda.html">Beranda</a>
+        <a href="pemimpin.html">Kepengurusan</a>
+        <a href="Informasi.html">Informasi</a> 
+        <a href="foto.html">Tentang Kami</a>
+        <a href="index.html">Keluar</a>
+      </div>
+      </div>
+  </div>
+
+  <!-- Riwayat Kepemimpinan -->
+  <div class="history-box">
+    <h2>Riwayat Kepemimpinan OMK St. Petrus Sidodadi</h2>
+    <ul>
+      <li><strong>1990 – 2005:</strong> Fidelis</li>
+      <li><strong>2005 – 2006:</strong> Thomas Gabriel</li>
+      <li><strong>2006 – 2009:</strong> Maria Christina</li>
+      <li><strong>2009 – 2012:</strong> Yohanes Saputra</li>
+      <li><strong>2012 – 2015:</strong> Agnes Natalia</li>
+      <li><strong>2015 – 2018:</strong> Stefanus Handoko</li>
+      <li><strong>2018 – 2020:</strong> Fransisca Widya</li>
+      <li><strong>2020 – 2022:</strong> Doni Oktavianus</li>
+      <li><strong>2022 – 2024:</strong> Clara Melinda</li>
+      <li><strong>2024 – Sekarang:</strong> Benediktus Rahmat</li>
+    </ul>
+  </div>
+
+  <!-- Bagan Kepengurusan -->
+  <div class="struktur-container">
+    <h2>Kepengurusan OMK 2024 - Sekarang</h2>
+    <div class="struktur-box">
+      <div class="ketua">Ketua: Thomas Edwin N</div>
+      <div class="tiga-box">
+        <div>Sekretaris: -</div>
+        <div>Bendahara: -</div>
+      </div>
+      <div class="divisi">
+        <div>Sie Iman</div>
+        <div>Sie Sosial</div>
+        <div>Sie Dokumentasi</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const toggle = document.getElementById("menuToggle");
+    const menu = document.getElementById("dropdownMenu");
+  
+    toggle.addEventListener("click", () => {
+      menu.classList.toggle("show");
+    });
+  
+    window.addEventListener("click", function(e) {
+      if (!document.querySelector('.header-bar').contains(e.target)) {
+        menu.classList.remove("show");
+      }
+    });
+  </script>
+</body>
+</html>

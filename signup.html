@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+  <header>
+    <img src="omk.png" alt="Logo" class="logo">
+  </header>
+
+  <main>
+    <section class="signup-container">
+      <h1>Sign Up</h1>
+      <form id="signup-form" class="signup-form">
+        <div class="form-group">
+          <label for="fullname">Nama Lengkap</label>
+          <input type="text" id="fullname" name="fullname" required>
+        </div>
+
+        <div class="form-group">
+          <label for="dob">Tanggal Lahir</label>
+          <input type="date" id="dob" name="dob" required>
+        </div>
+
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+
+        <div class="form-group">
+          <label for="confirm-password">Konfirmasi Password</label>
+          <input type="password" id="confirm-password" name="confirm-password" required>
+        </div>
+
+        <button type="submit" class="btn">Daftar</button>
+      </form>
+      <p class="login-text">
+        Sudah punya akun? <a href="index.html">Login</a>
+      </p>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById('signup-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const fullname = document.getElementById('fullname').value;
+      const dob = document.getElementById('dob').value;
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirm-password').value;
+
+      if (password !== confirmPassword) {
+        alert('Password dan konfirmasi password harus sama.');
+        return;
+      }
+
+      // Simpan akun ke localStorage
+      localStorage.setItem(username, password);
+
+      // Tandai bahwa signup berhasil
+      localStorage.setItem('signupSuccess', 'true');
+
+      // Redirect ke halaman login
+      window.location.href = 'index.html';
+    });
+  </script>
+</body>
+</html>

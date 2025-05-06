@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <section class="login-container">
+      <h1>Login</h1>
+      <form id="login-form" class="login-form">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit" class="btn">Login</button>
+      </form>
+      <p class="signup-text">
+        Belum punya akun? <a href="signup.html">Sign Up</a>
+      </p>
+    </section>
+  </main>
+
+  <script>
+    // Tampilkan alert jika baru selesai signup
+    if (localStorage.getItem('signupSuccess') === 'true') {
+      alert('Sign Up berhasil! Silakan login.');
+      localStorage.removeItem('signupSuccess');
+    }
+
+    document.getElementById('login-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const user = document.getElementById('username').value;
+      const pass = document.getElementById('password').value;
+      const storedPass = localStorage.getItem(user);
+
+      if (storedPass && storedPass === pass) {
+        alert('Login berhasil!');
+        window.location.href = 'Beranda.html';
+      } else {
+        alert('Username atau password salah.');
+      }
+    });
+  </script>
+</body>
+</html>

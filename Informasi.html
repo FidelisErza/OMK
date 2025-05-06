@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <title>Informasi</title>
+    <link rel="stylesheet" href="Beranda.css">
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="Beranda.html" class="nav-link">Beranda</a>
+            <a href="pemimpin.html" class="nav-link">Kepengurusan</a>
+            <a href="Informasi.html" class="nav-link active">Informasi</a>
+            <a href="foto.html" class="nav-link">Tentang Kami</a>
+        </div>
+        <div class="header-bar">
+            <img src="omk.png" alt="OMK Logo" class="profile-photo" id="menuToggle">
+            <div class="dropdown-menu" id="dropdownMenu">
+                <a href="beranda.html">Beranda</a>
+                <a href="pemimpin.html">Kepengurusan</a>
+                <a href="Informasi.html">Informasi</a>
+                <a href="foto.html">Tentang Kami</a>
+                <a href="index.html">Keluar</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Tabel Informasi -->
+    <main class="informasi-container">
+        <h2>Agenda Kegiatan</h2>
+        <table class="informasi-table">
+            <thead>
+                <tr>
+                    <th>Hari</th>
+                    <th>Tanggal</th>
+                    <th>Agenda</th>
+                    <th>Catatan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Senin</td>
+                    <td>05 Mei 2025</td>
+                    <td>Rapat Pengurus</td>
+                    <td>Berseragam lengkap</td>
+                </tr>
+                <tr>
+                    <td>Rabu</td>
+                    <td>07 Mei 2025</td>
+                    <td>Latihan Koordinasi</td>
+                    <td>Bawa alat tulis</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <script>
+        const menuToggle = document.getElementById("menuToggle");
+        const dropdownMenu = document.getElementById("dropdownMenu");
+    
+        menuToggle.addEventListener("click", () => {
+          dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
+        });
+    
+        window.addEventListener("click", function (e) {
+          if (!document.querySelector('.menu-wrapper').contains(e.target)) {
+            dropdownMenu.style.display = "none";
+          }
+        });
+      </script>
+    </body>
+    <script>
+        const toggle = document.getElementById("menuToggle");
+        const menu = document.getElementById("dropdownMenu");
+      
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("show");
+        });
+      
+        window.addEventListener("click", function(e) {
+          if (!document.querySelector('.menu-wrapper').contains(e.target)) {
+            menu.classList.remove("show");
+          }
+        });
+      </script>
+</body>
+</html>

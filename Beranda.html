@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beranda OMK</title>
+  <link rel="stylesheet" href="Beranda.css">
+  <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="Beranda.html" class="nav-link active">Beranda</a>
+      <a href="pemimpin.html" class="nav-link">Kepengurusan</a>
+        <a href="Informasi.html" class="nav-link">Informasi</a>
+        <a href="foto.html" class="nav-link">Tentang Kami</a>
+    
+    </div>
+    <div class="header-bar">
+        <img src="omk.png" alt="OMK Logo" class="profile-photo" id="menuToggle">
+        <div class="dropdown-menu" id="dropdownMenu">
+          <a href="beranda.html">Beranda</a>
+          <a href="pemimpin.html">Kepengurusan</a>
+          <a href="Informasi.html">Informasi</a>
+          <a href="foto.html">Tentang Kami</a>
+          <a href="index.html">Keluar</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <section class="logo-section">
+    <div class="logo-container">
+      <img src="omk.png" alt="Logo OMK" class="logo-main">
+    </div>
+    <div class="info-container">
+      <div class="logo-description">
+        <h2>Makna Simbol Logo OMK</h2>
+        <ul>
+          <li><strong>Salib</strong> – Simbol iman Kristiani yang menjadi dasar hidup OMK.</li>
+          <li><strong>Buku Terbuka</strong> – Melambangkan ilmu pengetahuan dan Firman Tuhan yang membimbing generasi muda.</li>
+          <li><strong>Merpati</strong> – Melambangkan Roh Kudus dan damai sejahtera yang menyertai setiap langkah OMK.</li>
+          <li><strong>Siluet Pemuda</strong> – Simbol semangat, kebersamaan, dan keterlibatan aktif pemuda dalam Gereja.</li>
+        </ul>
+      </div>
+      <div class="history-box">
+        <h2>Sejarah OMK</h2>
+        <p>
+          Orang Muda Katolik (OMK) St. Petrus Sidodadi dibentuk sebagai wadah pembinaan iman dan kebersamaan bagi kaum muda Katolik di lingkungan. 
+          Berawal dari semangat pelayanan dan kerinduan untuk lebih aktif di Gereja, OMK menjadi tempat bertumbuh dalam nilai Kristiani, 
+          mempererat persaudaraan, dan terlibat langsung dalam kegiatan sosial maupun liturgis di Paroki.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const dropdownMenu = document.getElementById("dropdownMenu");
+
+    menuToggle.addEventListener("click", () => {
+      dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
+    });
+
+    window.addEventListener("click", function (e) {
+      if (!document.querySelector('.menu-wrapper').contains(e.target)) {
+        dropdownMenu.style.display = "none";
+      }
+    });
+  </script>
+</body>
+<script>
+    const toggle = document.getElementById("menuToggle");
+    const menu = document.getElementById("dropdownMenu");
+  
+    toggle.addEventListener("click", () => {
+      menu.classList.toggle("show");
+    });
+  
+    window.addEventListener("click", function(e) {
+      if (!document.querySelector('.menu-wrapper').contains(e.target)) {
+        menu.classList.remove("show");
+      }
+    });
+  </script>
+</html>
